@@ -1,0 +1,144 @@
+.navbar-brand-name {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0.5em;
+}
+
+.navbar-badge {
+	margin-top:10px;
+}
+
+.navbar {
+    padding-bottom: 0;
+}
+
+.navbar-nav{
+    margin-top: 1em;
+}
+
+.nav-item {
+    border-bottom: 5px solid transparent;
+}
+
+.nav-item.active{
+    border-bottom: 5px solid lightblue;
+}
+
+.nav-item-text {
+    margin-bottom: 0;
+}
+
+
+.preview-header {
+    display: flex;
+}
+
+.block-preview-item {
+}
+
+.block-preview-item .block {
+    background-color: lightgray;
+    min-width: 5em;
+	padding-left: 1em;
+	padding-right: 1em;
+    align-items: center;
+    justify-content: center;
+}
+
+.block-preview-item  p {
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.block-preview-item  .block-info {
+    overflow: hidden;
+    margin: 0.5em;
+}
+
+.tx-preview-item  p {
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.tx-preview-item  .tx-info {
+    overflow: hidden;
+}
+
+.block-table .header-item{
+    text-align: center;
+    display: inline-block;
+}
+
+.block-table .row-item {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.tx-table .header-item{
+    text-align: center;
+    display: inline-block;
+}
+
+.tx-table .row-item {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.round-box {
+	border-radius: .5em;
+	border: 1px lightgray solid;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+
+.block-code {
+	display: block;
+	font-family: Monospace;
+	color: black;
+	border-radius: .5em;
+	border: 1px #e0e0e0 solid;
+	background-color: #e0e0e0;
+	padding: 1em;
+	font-size: 1.1em;
+	overflow: scroll;
+}
+
+.rie-inline {
+	display: inline-block;
+	padding: 0px;
+	border: dashed gray;
+	border-width: 0px 0px 1px 0px;
+}
+
+.trader button {
+	width: 5em;
+}
+
+.indented-box {
+	display: inline-block;
+	margin-left: 1em;
+	padding-left: .2em;
+	padding-right: .2em;
+	width: 100%;
+	min-height: 3em;
+	border: 1px dashed gray;
+}
+
+.gray {
+	color: gray;
+}
+
+.shallow {
+	margin-top: .2em;
+	margin-bottom: .2em;
+}
