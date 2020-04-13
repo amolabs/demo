@@ -11,7 +11,7 @@ import * as rpc from '../rpc';
 // for faucet ask
 import axios from 'axios';
 
-const faucetServer = '139.162.116.176:20000';
+const faucetServer = '172.105.194.191:2000';
 
 function askForCoin(address) {
 	const reqBody = JSON.stringify({ recp: address });
