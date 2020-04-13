@@ -7,39 +7,9 @@ import sha256 from 'js-sha256';
 //const BCNODE = '139.162.116.176:26657'; // amo-tokyo
 const BCNODE = '172.105.213.114:26657'; // amo-test1
 //const BCNODE = 'vm7:26657'; // stress test vm1
-const wsURL = `ws://${BCNODE}/websocket`;
 const httpURL = `http://${BCNODE}`;
 
 const STORAGE = 'http://139.162.111.178:5000'; // amo-sto
-
-let ws;
-
-/* web socket based new block subscription */
-export function startSubscribe(onNewBlock, onError) {
-	ws = new WebSocket(wsURL);
-
-	// register callbacks for web socket
-	ws.onopen = () => {
-		ws.send(
-			JSON.stringify({
-				jsonrpc: '2.0',
-				method: 'subscribe',
-				id: 'newBlock',
-				params: {
-					query: "tm.event='NewBlock'",
-				}
-			})
-		);
-	};
-	ws.onmessage = e => {
-		const message = JSON.parse(e.data);
-		if (message.id === 'newBlock#event') {
-			const blockHeader = message.result.data.value.block.header;
-			onNewBlock(blockHeader.height);
-		}
-	};
-	ws.onerror = onError;
-}
 
 //////// block query rpc
 

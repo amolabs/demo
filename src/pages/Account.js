@@ -1,7 +1,6 @@
 // vim: set noexpandtab ts=2 sw=2 :
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { TxBriefList } from '../components/Tx';
 import { TextInput, KeyValueRow, coinVerbose, pub2address, validatorLink, accountLink } from '../util';
 import { fetchBalance, fetchStake, fetchDelegate, fetchTxsByAccount } from '../rpc';
 
@@ -47,7 +46,6 @@ const AccountDetail = ({address}) => {
 			<Balance address={address}/>
 			<Stake address={address}/>
 			<Delegate address={address}/>
-			<AccountTxs address={address}/>
 		</div>
 	);
 };
@@ -181,39 +179,6 @@ class Delegate extends Component {
 			desc = 'none';
 		}
 		return ( <KeyValueRow k="Delegate" v={desc}/> );
-	}
-}
-
-class AccountTxs extends Component {
-	state = { txs: [] };
-
-	componentDidMount() {
-		this.updateTxs();
-	}
-
-	componentDidUpdate(prevProps) {
-		if (this.props.address !== prevProps.address) {
-			this.updateTxs();
-		}
-	}
-
-	updateTxs = () => {
-		if (this.props.address) {
-			fetchTxsByAccount(this.props.address,
-				result => { this.setState({ txs: result }); }
-			);
-		} else {
-			this.setState({ txs: [] });
-		}
-	};
-
-	// TODO: pagination
-	render() {
-		return (
-			<div>Tx list sent from this account ({this.state.txs.length} transactions):
-				<TxBriefList txs={this.state.txs}/>
-			</div>
-		);
 	}
 }
 

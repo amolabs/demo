@@ -32,7 +32,7 @@ const NavBrand = () => {
 				width={30}
 				alt={'AMO'}
 			/>
-			<h3 className="navbar-brand-name">AMO Blockchain Explorer</h3>
+			<h3 className="navbar-brand-name">AMO Blockchain Demo</h3>
 		</Link>
 	);
 };
@@ -40,7 +40,7 @@ const NavBrand = () => {
 const NavBadge = () => {
 	// TODO: use global variable
 	return (
-		<span className="navbar-badge">testnet</span>
+		<span className="navbar-badge">for Testnet</span>
 	);
 };
 
@@ -49,28 +49,8 @@ const NavMenu = ({ pathName }) => {
 		<ul className="navbar-nav ml-auto small mb-2 mb-md-0">
 			<NavItem name={'Home'} link={'/'} curr={pathName} />
 			<NavItem
-				name={'Blocks'}
-				link={'/blocks'}
-				curr={pathName}
-			/>
-			<NavItem
-				name={'Block'}
-				link={'/block'}
-				curr={pathName}
-			/>
-			<NavItem
-				name={'Tx'}
-				link={'/tx'}
-				curr={pathName}
-			/>
-			<NavItem
 				name={'Account'}
 				link={'/account'}
-				curr={pathName}
-			/>
-			<NavItem
-				name={'Validator'}
-				link={'/validator'}
 				curr={pathName}
 			/>
 			<NavItem
@@ -79,8 +59,8 @@ const NavMenu = ({ pathName }) => {
 				curr={pathName}
 			/>
 			<NavItem
-				name={'Demo'}
-				link={'/demo'}
+				name={'Trade'}
+				link={'/trade'}
 				curr={pathName}
 			/>
 			<NavItem

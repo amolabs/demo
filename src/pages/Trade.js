@@ -18,7 +18,7 @@ import axios from 'axios';
 
 const faucetServer = '172.105.194.191:2000';
 
-class Demo extends Component {
+class Trade extends Component {
 	state = {
 		seller: {},
 		buyer: {},
@@ -260,7 +260,7 @@ class Demo extends Component {
 		return (
 			<div className="container">
 				<div className="container">
-					Demo main. Some descriptions here.
+					Trade demo main. Some descriptions here.
 				</div>
 				<StepGuide state={this.state} />
 				<div className="container">
@@ -921,4 +921,4 @@ const ConsoleGuide = ({state}) => {
 }
 */
 
-export default Demo;
+export default Trade;

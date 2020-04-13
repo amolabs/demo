@@ -1,7 +1,6 @@
 // vim: set noexpandtab ts=2 sw=2 :
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { TxBriefList } from '../components/Tx';
 import { TextInput, KeyValueRow, accountLink } from '../util';
 import * as rpc from '../rpc';
 
@@ -84,7 +83,6 @@ class ParcelDetail extends Component {
 					parcelID={this.props.parcelID}
 					onChangeID={this.props.onChangeID}
 				/>
-				<ParcelTxs parcelID={this.props.parcelID}/>
 			</div>
 		);
 	}
@@ -140,39 +138,6 @@ class ParcelMetadata extends Component {
 
 		return (
 			<KeyValueRow k="Metadata" v={JSON.stringify(metadata)} />
-		);
-	}
-}
-
-class ParcelTxs extends Component {
-	state = { txs: [] };
-
-	componentDidMount() {
-		this.updateTxs();
-	}
-
-	componentDidUpdate(prevProps) {
-		if (this.props.parcelID !== prevProps.parcelID) {
-			this.updateTxs();
-		}
-	}
-
-	updateTxs = () => {
-		if (this.props.parcelID) {
-			rpc.fetchTxsByParcel(this.props.parcelID,
-				result => { this.setState({ txs: result }); }
-			);
-		} else {
-			this.setState({ txs: [] });
-		}
-	};
-
-	// TODO: pagination
-	render() {
-		return (
-			<div>Tx list related to this parcel ({this.state.txs.length} transactions):
-				<TxBriefList txs={this.state.txs}/>
-			</div>
 		);
 	}
 }
