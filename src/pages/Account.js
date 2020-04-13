@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { TextInput, KeyValueRow, coinVerbose, pub2address, validatorLink, accountLink } from '../util';
-import { fetchBalance, fetchStake, fetchDelegate, fetchTxsByAccount } from '../rpc';
+import { fetchBalance, fetchStake, fetchDelegate } from '../rpc';
 
 class Account extends Component {
 	state = {
